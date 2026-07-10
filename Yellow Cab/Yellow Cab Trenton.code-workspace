@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Downloads/Open_Sans (1)"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Yellow Cab Trenton",
+		"liveServer.settings.port": 5501
+	}
+}
