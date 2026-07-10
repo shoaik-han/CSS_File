@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure HTML/CSS Dialog</title>
+  <style>
+    /* 1. Base Styles for Buttons */
+    .btn-open, .btn-close {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    .btn-open {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-close {
+      background-color: #dc3545;
+      color: white;
+      margin-top: 15px;
+    }
+
+    /* 2. Hide the Toggle Checkbox completely */
+    #dialog-toggle {
+      display: none;
+    }
+
+    /* 3. The Dialog Backdrop Overlay */
+    .dialog-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* 4. The Dialog Box Box Content */
+    .dialog-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    /* 5. The Magic Link: Show the Dialog when the Checkbox is Checked */
+    #dialog-toggle:checked ~ .dialog-overlay {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trigger Button (Styled as a button but acts as a click label) -->
+  <label for="dialog-toggle" class="btn-open">Open Dialog</label>
+
+  <!-- Hidden Checkbox that tracks the open/close state -->
+  <input type="checkbox" id="dialog-toggle">
+
+  <!-- The Dialog Structure -->
+  <div class="dialog-overlay">
+    <div class="dialog-box">
+      <h2>Welcome to the Dialog!</h2>
+      <p>This modal pop-up is built entirely using HTML and CSS without any JavaScript.</p>
+      
+      <!-- Close Button inside the Dialog -->
+      <label for="dialog-toggle" class="btn-close">Close Dialog</label>
+    </div>
+  </div>
+
+</body>
+</html>
